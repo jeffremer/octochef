@@ -12,6 +12,8 @@
 
 @class DetailViewController;
 
+@class LoginViewController;
+
 @interface octochefAppDelegate : NSObject <UIApplicationDelegate> {
 
 }

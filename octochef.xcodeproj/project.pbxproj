@@ -23,6 +23,13 @@
 		1FB336CD13D202A8008F6E6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FB336CB13D202A8008F6E6B /* InfoPlist.strings */; };
 		1FB336D013D202A8008F6E6B /* octochefTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1FB336CF13D202A8008F6E6B /* octochefTests.h */; };
 		1FB336D213D202A8008F6E6B /* octochefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB336D113D202A8008F6E6B /* octochefTests.m */; };
+		1FD009B913D2271E00ED2478 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD009B713D2271E00ED2478 /* LoginViewController.m */; };
+		1FD009BA13D2271E00ED2478 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD009B713D2271E00ED2478 /* LoginViewController.m */; };
+		1FD009BB13D2271E00ED2478 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009B813D2271E00ED2478 /* LoginViewController.xib */; };
+		1FD009BC13D2271E00ED2478 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009B813D2271E00ED2478 /* LoginViewController.xib */; };
+		1FD009BF13D2316D00ED2478 /* octochef.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009BE13D2316D00ED2478 /* octochef.png */; };
+		1FD009C113D2347400ED2478 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009C013D2347400ED2478 /* background.jpg */; };
+		1FD009C313D23A2D00ED2478 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009C213D23A2D00ED2478 /* title.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,13 @@
 		1FB336CE13D202A8008F6E6B /* octochefTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "octochefTests-Prefix.pch"; sourceTree = "<group>"; };
 		1FB336CF13D202A8008F6E6B /* octochefTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = octochefTests.h; sourceTree = "<group>"; };
 		1FB336D113D202A8008F6E6B /* octochefTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = octochefTests.m; sourceTree = "<group>"; };
+		1FD009B613D2271E00ED2478 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1FD009B713D2271E00ED2478 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1FD009B813D2271E00ED2478 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1FD009BE13D2316D00ED2478 /* octochef.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octochef.png; sourceTree = "<group>"; };
+		1FD009C013D2347400ED2478 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		1FD009C213D23A2D00ED2478 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		1FD009C713D2506100ED2478 /* LoginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,15 +130,18 @@
 		1FB336A513D202A8008F6E6B /* octochef */ = {
 			isa = PBXGroup;
 			children = (
+				1FD009C613D23E5700ED2478 /* Nibs */,
+				1FD009C513D23E4100ED2478 /* Images */,
 				1FB336AE13D202A8008F6E6B /* octochefAppDelegate.h */,
 				1FB336AF13D202A8008F6E6B /* octochefAppDelegate.m */,
-				1FB336B113D202A8008F6E6B /* MainWindow.xib */,
 				1FB336B413D202A8008F6E6B /* DetailViewController.h */,
 				1FB336B513D202A8008F6E6B /* DetailViewController.m */,
-				1FB336B713D202A8008F6E6B /* DetailView.xib */,
 				1FB336BA13D202A8008F6E6B /* RootViewController.h */,
 				1FB336BB13D202A8008F6E6B /* RootViewController.m */,
+				1FD009B613D2271E00ED2478 /* LoginViewController.h */,
+				1FD009B713D2271E00ED2478 /* LoginViewController.m */,
 				1FB336A613D202A8008F6E6B /* Supporting Files */,
+				1FD009C713D2506100ED2478 /* LoginDelegate.h */,
 			);
 			path = octochef;
 			sourceTree = "<group>";
@@ -158,6 +175,26 @@
 				1FB336CE13D202A8008F6E6B /* octochefTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FD009C513D23E4100ED2478 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1FD009C013D2347400ED2478 /* background.jpg */,
+				1FD009BE13D2316D00ED2478 /* octochef.png */,
+				1FD009C213D23A2D00ED2478 /* title.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		1FD009C613D23E5700ED2478 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				1FB336B113D202A8008F6E6B /* MainWindow.xib */,
+				1FB336B713D202A8008F6E6B /* DetailView.xib */,
+				1FD009B813D2271E00ED2478 /* LoginViewController.xib */,
+			);
+			name = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +270,10 @@
 				1FB336AA13D202A8008F6E6B /* InfoPlist.strings in Resources */,
 				1FB336B313D202A8008F6E6B /* MainWindow.xib in Resources */,
 				1FB336B913D202A8008F6E6B /* DetailView.xib in Resources */,
+				1FD009BB13D2271E00ED2478 /* LoginViewController.xib in Resources */,
+				1FD009BF13D2316D00ED2478 /* octochef.png in Resources */,
+				1FD009C113D2347400ED2478 /* background.jpg in Resources */,
+				1FD009C313D23A2D00ED2478 /* title.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +283,7 @@
 			files = (
 				1FB336CD13D202A8008F6E6B /* InfoPlist.strings in Resources */,
 				1FB336D013D202A8008F6E6B /* octochefTests.h in Resources */,
+				1FD009BC13D2271E00ED2478 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +314,7 @@
 				1FB336B013D202A8008F6E6B /* octochefAppDelegate.m in Sources */,
 				1FB336B613D202A8008F6E6B /* DetailViewController.m in Sources */,
 				1FB336BC13D202A8008F6E6B /* RootViewController.m in Sources */,
+				1FD009B913D2271E00ED2478 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FB336D213D202A8008F6E6B /* octochefTests.m in Sources */,
+				1FD009BA13D2271E00ED2478 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +500,7 @@
 				1FB336D713D202A8008F6E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FB336D813D202A8008F6E6B /* Build configuration list for PBXNativeTarget "octochefTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +509,7 @@
 				1FB336DA13D202A8008F6E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
