@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FB336A013D202A8008F6E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB3369F13D202A8008F6E6B /* UIKit.framework */; };
+		1FB336A213D202A8008F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A113D202A8008F6E6B /* Foundation.framework */; };
+		1FB336A413D202A8008F6E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A313D202A8008F6E6B /* CoreGraphics.framework */; };
+		1FB336AA13D202A8008F6E6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FB336A813D202A8008F6E6B /* InfoPlist.strings */; };
+		1FB336AD13D202A8008F6E6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB336AC13D202A8008F6E6B /* main.m */; };
+		1FB336B013D202A8008F6E6B /* octochefAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB336AF13D202A8008F6E6B /* octochefAppDelegate.m */; };
+		1FB336B313D202A8008F6E6B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB336B113D202A8008F6E6B /* MainWindow.xib */; };
+		1FB336B613D202A8008F6E6B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB336B513D202A8008F6E6B /* DetailViewController.m */; };
+		1FB336B913D202A8008F6E6B /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB336B713D202A8008F6E6B /* DetailView.xib */; };
+		1FB336BC13D202A8008F6E6B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB336BB13D202A8008F6E6B /* RootViewController.m */; };
+		1FB336C313D202A8008F6E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB3369F13D202A8008F6E6B /* UIKit.framework */; };
+		1FB336C413D202A8008F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A113D202A8008F6E6B /* Foundation.framework */; };
+		1FB336C513D202A8008F6E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A313D202A8008F6E6B /* CoreGraphics.framework */; };
+		1FB336CD13D202A8008F6E6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FB336CB13D202A8008F6E6B /* InfoPlist.strings */; };
+		1FB336D013D202A8008F6E6B /* octochefTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1FB336CF13D202A8008F6E6B /* octochefTests.h */; };
+		1FB336D213D202A8008F6E6B /* octochefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB336D113D202A8008F6E6B /* octochefTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FB336C613D202A8008F6E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FB3369213D202A8008F6E6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FB3369A13D202A8008F6E6B;
+			remoteInfo = octochef;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FB3369B13D202A8008F6E6B /* octochef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = octochef.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FB3369F13D202A8008F6E6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1FB336A113D202A8008F6E6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1FB336A313D202A8008F6E6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1FB336A713D202A8008F6E6B /* octochef-Info.plist */ = {isa = PBXFileReference; path = "octochef-Info.plist"; sourceTree = "<group>"; };
+		1FB336A913D202A8008F6E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FB336AB13D202A8008F6E6B /* octochef-Prefix.pch */ = {isa = PBXFileReference; path = "octochef-Prefix.pch"; sourceTree = "<group>"; };
+		1FB336AC13D202A8008F6E6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1FB336AE13D202A8008F6E6B /* octochefAppDelegate.h */ = {isa = PBXFileReference; path = octochefAppDelegate.h; sourceTree = "<group>"; };
+		1FB336AF13D202A8008F6E6B /* octochefAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = octochefAppDelegate.m; sourceTree = "<group>"; };
+		1FB336B213D202A8008F6E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		1FB336B413D202A8008F6E6B /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		1FB336B513D202A8008F6E6B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1FB336B813D202A8008F6E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
+		1FB336BA13D202A8008F6E6B /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		1FB336BB13D202A8008F6E6B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1FB336C213D202A8008F6E6B /* octochefTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = octochefTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FB336CA13D202A8008F6E6B /* octochefTests-Info.plist */ = {isa = PBXFileReference; path = "octochefTests-Info.plist"; sourceTree = "<group>"; };
+		1FB336CC13D202A8008F6E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FB336CE13D202A8008F6E6B /* octochefTests-Prefix.pch */ = {isa = PBXFileReference; path = "octochefTests-Prefix.pch"; sourceTree = "<group>"; };
+		1FB336CF13D202A8008F6E6B /* octochefTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = octochefTests.h; sourceTree = "<group>"; };
+		1FB336D113D202A8008F6E6B /* octochefTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = octochefTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FB3369813D202A8008F6E6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB336A013D202A8008F6E6B /* UIKit.framework in Frameworks */,
+				1FB336A213D202A8008F6E6B /* Foundation.framework in Frameworks */,
+				1FB336A413D202A8008F6E6B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FB336BE13D202A8008F6E6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB336C313D202A8008F6E6B /* UIKit.framework in Frameworks */,
+				1FB336C413D202A8008F6E6B /* Foundation.framework in Frameworks */,
+				1FB336C513D202A8008F6E6B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FB3369013D202A8008F6E6B = {
+			isa = PBXGroup;
+			children = (
+				1FB336A513D202A8008F6E6B /* octochef */,
+				1FB336C813D202A8008F6E6B /* octochefTests */,
+				1FB3369E13D202A8008F6E6B /* Frameworks */,
+				1FB3369C13D202A8008F6E6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FB3369C13D202A8008F6E6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FB3369B13D202A8008F6E6B /* octochef.app */,
+				1FB336C213D202A8008F6E6B /* octochefTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FB3369E13D202A8008F6E6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FB3369F13D202A8008F6E6B /* UIKit.framework */,
+				1FB336A113D202A8008F6E6B /* Foundation.framework */,
+				1FB336A313D202A8008F6E6B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FB336A513D202A8008F6E6B /* octochef */ = {
+			isa = PBXGroup;
+			children = (
+				1FB336AE13D202A8008F6E6B /* octochefAppDelegate.h */,
+				1FB336AF13D202A8008F6E6B /* octochefAppDelegate.m */,
+				1FB336B113D202A8008F6E6B /* MainWindow.xib */,
+				1FB336B413D202A8008F6E6B /* DetailViewController.h */,
+				1FB336B513D202A8008F6E6B /* DetailViewController.m */,
+				1FB336B713D202A8008F6E6B /* DetailView.xib */,
+				1FB336BA13D202A8008F6E6B /* RootViewController.h */,
+				1FB336BB13D202A8008F6E6B /* RootViewController.m */,
+				1FB336A613D202A8008F6E6B /* Supporting Files */,
+			);
+			path = octochef;
+			sourceTree = "<group>";
+		};
+		1FB336A613D202A8008F6E6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FB336A713D202A8008F6E6B /* octochef-Info.plist */,
+				1FB336A813D202A8008F6E6B /* InfoPlist.strings */,
+				1FB336AB13D202A8008F6E6B /* octochef-Prefix.pch */,
+				1FB336AC13D202A8008F6E6B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FB336C813D202A8008F6E6B /* octochefTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FB336CF13D202A8008F6E6B /* octochefTests.h */,
+				1FB336D113D202A8008F6E6B /* octochefTests.m */,
+				1FB336C913D202A8008F6E6B /* Supporting Files */,
+			);
+			path = octochefTests;
+			sourceTree = "<group>";
+		};
+		1FB336C913D202A8008F6E6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FB336CA13D202A8008F6E6B /* octochefTests-Info.plist */,
+				1FB336CB13D202A8008F6E6B /* InfoPlist.strings */,
+				1FB336CE13D202A8008F6E6B /* octochefTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FB3369A13D202A8008F6E6B /* octochef */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FB336D513D202A8008F6E6B /* Build configuration list for PBXNativeTarget "octochef" */;
+			buildPhases = (
+				1FB3369713D202A8008F6E6B /* Sources */,
+				1FB3369813D202A8008F6E6B /* Frameworks */,
+				1FB3369913D202A8008F6E6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = octochef;
+			productName = octochef;
+			productReference = 1FB3369B13D202A8008F6E6B /* octochef.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FB336C113D202A8008F6E6B /* octochefTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FB336D813D202A8008F6E6B /* Build configuration list for PBXNativeTarget "octochefTests" */;
+			buildPhases = (
+				1FB336BD13D202A8008F6E6B /* Sources */,
+				1FB336BE13D202A8008F6E6B /* Frameworks */,
+				1FB336BF13D202A8008F6E6B /* Resources */,
+				1FB336C013D202A8008F6E6B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FB336C713D202A8008F6E6B /* PBXTargetDependency */,
+			);
+			name = octochefTests;
+			productName = octochefTests;
+			productReference = 1FB336C213D202A8008F6E6B /* octochefTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FB3369213D202A8008F6E6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Widgetbox, Inc.";
+			};
+			buildConfigurationList = 1FB3369513D202A8008F6E6B /* Build configuration list for PBXProject "octochef" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1FB3369013D202A8008F6E6B;
+			productRefGroup = 1FB3369C13D202A8008F6E6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FB3369A13D202A8008F6E6B /* octochef */,
+				1FB336C113D202A8008F6E6B /* octochefTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FB3369913D202A8008F6E6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB336AA13D202A8008F6E6B /* InfoPlist.strings in Resources */,
+				1FB336B313D202A8008F6E6B /* MainWindow.xib in Resources */,
+				1FB336B913D202A8008F6E6B /* DetailView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FB336BF13D202A8008F6E6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB336CD13D202A8008F6E6B /* InfoPlist.strings in Resources */,
+				1FB336D013D202A8008F6E6B /* octochefTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FB336C013D202A8008F6E6B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FB3369713D202A8008F6E6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB336AD13D202A8008F6E6B /* main.m in Sources */,
+				1FB336B013D202A8008F6E6B /* octochefAppDelegate.m in Sources */,
+				1FB336B613D202A8008F6E6B /* DetailViewController.m in Sources */,
+				1FB336BC13D202A8008F6E6B /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FB336BD13D202A8008F6E6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB336D213D202A8008F6E6B /* octochefTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FB336C713D202A8008F6E6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FB3369A13D202A8008F6E6B /* octochef */;
+			targetProxy = 1FB336C613D202A8008F6E6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1FB336A813D202A8008F6E6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FB336A913D202A8008F6E6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1FB336B113D202A8008F6E6B /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FB336B213D202A8008F6E6B /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		1FB336B713D202A8008F6E6B /* DetailView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FB336B813D202A8008F6E6B /* en */,
+			);
+			name = DetailView.xib;
+			sourceTree = "<group>";
+		};
+		1FB336CB13D202A8008F6E6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FB336CC13D202A8008F6E6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1FB336D313D202A8008F6E6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		1FB336D413D202A8008F6E6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		1FB336D613D202A8008F6E6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "octochef/octochef-Prefix.pch";
+				INFOPLIST_FILE = "octochef/octochef-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1FB336D713D202A8008F6E6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "octochef/octochef-Prefix.pch";
+				INFOPLIST_FILE = "octochef/octochef-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1FB336D913D202A8008F6E6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/octochef.app/octochef";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "octochefTests/octochefTests-Prefix.pch";
+				INFOPLIST_FILE = "octochefTests/octochefTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1FB336DA13D202A8008F6E6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/octochef.app/octochef";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "octochefTests/octochefTests-Prefix.pch";
+				INFOPLIST_FILE = "octochefTests/octochefTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FB3369513D202A8008F6E6B /* Build configuration list for PBXProject "octochef" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FB336D313D202A8008F6E6B /* Debug */,
+				1FB336D413D202A8008F6E6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FB336D513D202A8008F6E6B /* Build configuration list for PBXNativeTarget "octochef" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FB336D613D202A8008F6E6B /* Debug */,
+				1FB336D713D202A8008F6E6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1FB336D813D202A8008F6E6B /* Build configuration list for PBXNativeTarget "octochefTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FB336D913D202A8008F6E6B /* Debug */,
+				1FB336DA13D202A8008F6E6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FB3369213D202A8008F6E6B /* Project object */;
+}
