@@ -11,16 +11,8 @@
 
 @implementation RepositoryChooserViewController
 @synthesize repositoriesArray;
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
+@synthesize tableView;
+@synthesize topToolbar;
 - (void)dealloc
 {
     [super dealloc];
@@ -57,6 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView setEditing:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -87,16 +80,16 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
     return [self.repositoriesArray count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
@@ -146,6 +139,10 @@
 }
 */
 
+-(UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath {
+    return 3;
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -158,6 +155,16 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+}
+
+- (IBAction) done:(id)sender {
+    if([self.tableView respondsToSelector:@selector(indexPathsForSelectedRows)]) {
+        NSArray *indexes = [self.tableView indexPathsForSelectedRows];
+        for (NSIndexPath *path in indexes) {
+            Repository *repo = [repositoriesArray objectAtIndex:path.row];
+            NSLog(@"Selected repo %@", repo.name);
+        }
+    }
 }
 
 @end
