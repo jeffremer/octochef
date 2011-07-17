@@ -22,6 +22,7 @@
         newDelegate.currentRepository = omDelegate.currentRepository;
         newDelegate.currentBlob = leaf.sha;
         newDelegate.delegate = omDelegate.delegate;
+        newDelegate.currentPath = leaf.path;
         
         [Leaf fetchBlobWithDelegate:newDelegate];
         //[leaf fetchBlobWithDelegate:<#(ObjectMapperDelegate *)#> andRepo:<#(NSString *)#> andSha:<#(NSString *)#>

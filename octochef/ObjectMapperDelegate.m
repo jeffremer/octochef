@@ -14,6 +14,7 @@
 @synthesize currentRepository;
 @synthesize currentBranch;
 @synthesize currentBlob;
+@synthesize currentPath;
 @synthesize delegate;
 
 -(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
