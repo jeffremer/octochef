@@ -55,6 +55,7 @@
 		9498887C13D211950072506F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887913D211950072506F /* CFNetwork.framework */; };
 		9498887D13D211950072506F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887A13D211950072506F /* MobileCoreServices.framework */; };
 		9498887E13D211950072506F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887B13D211950072506F /* SystemConfiguration.framework */; };
+		94BF1C8013D34E2400CCF2B2 /* UserSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BF1C7F13D34E2300CCF2B2 /* UserSingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,8 @@
 		9498887A13D211950072506F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9498887B13D211950072506F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9498887F13D211BD0072506F /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		94BF1C7E13D34E2300CCF2B2 /* UserSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSingleton.h; sourceTree = "<group>"; };
+		94BF1C7F13D34E2300CCF2B2 /* UserSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				947D15ED13D2815D00253595 /* Blob.m */,
+				947D15E713D2814F00253595 /* Blob.h */,
 				947D15EE13D2815D00253595 /* Branch.h */,
 				947D15E813D2814F00253595 /* Branch.m */,
 				947D15F613D2815D00253595 /* NSDataAdditions.h */,
@@ -395,10 +399,11 @@
 				947D15F913D2815D00253595 /* Repository.m */,
 				947D15FA13D2815D00253595 /* Tree.h */,
 				947D15FB13D2815D00253595 /* Tree.m */,
-				947D15E713D2814F00253595 /* Blob.h */,
 				947D15E913D2814F00253595 /* Leaf.h */,
 				947D15EA13D2814F00253595 /* Leaf.m */,
 				947D160413D2857E00253595 /* Models.h */,
+				94BF1C7E13D34E2300CCF2B2 /* UserSingleton.h */,
+				94BF1C7F13D34E2300CCF2B2 /* UserSingleton.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				1F5809C713D2984F008E124F /* html.c in Sources */,
 				1F5809C813D2984F008E124F /* markdown.c in Sources */,
 				1F5809C913D2984F008E124F /* Touchdown.m in Sources */,
+				94BF1C8013D34E2400CCF2B2 /* UserSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
