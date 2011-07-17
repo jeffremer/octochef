@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface Blob : NSObject {
     NSString * _content;
     NSString * _encoding;

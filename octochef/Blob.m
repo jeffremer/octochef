@@ -8,7 +8,6 @@
 
 #import "Blob.h"
 
-
 @implementation Blob
 @synthesize content;
 @synthesize encoding;
