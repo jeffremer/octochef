@@ -10,5 +10,8 @@
 
 
 @implementation Repository
-
+@synthesize name;
+@synthesize description;
+@synthesize created_at;
+@synthesize html_url;
 @end

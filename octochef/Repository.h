@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface Repository : RKObject {
-    
+@interface Repository : NSObject {
+    NSString * _name;
+    NSString * _description;
+    NSString * _created_at;
+    NSString * _html_url;
 }
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * description;
+@property (nonatomic, retain) NSString * created_at;
+@property (nonatomic, retain) NSString * html_url;
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright 2011 Widgetbox, Inc. All rights reserved.
 //
 
-#import "Tree.h"
+#import "Leaf.h"
 
 
-@implementation Tree
+@implementation Leaf
 
 @end

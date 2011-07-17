@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Tree : NSObject {
+@interface Leaf : NSObject {
     
 }
 
