@@ -87,22 +87,25 @@
         
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *libraryDirectory = [paths objectAtIndex:0];
-    // TODO: save repos by user name!
-    NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:@"Repositories.txt"];
+
+    NSString *repoFilename =  [NSString stringWithFormat:@"Repositories-", self.username];
+    NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:repoFilename];
     
     NSArray *repos = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     if (repos != nil) {
-        NSLog(@"repos exist locally!");
+        NSLog(@"Repositories exist locally.");
+        for (id object in repos) {
+            Repository * repo = object;
+            NSLog(@"%@", repo.name);
+        }
     } else {
         ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
+        omDelegate.username = self.username;
         RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
         [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
         NSString *resource = [NSString stringWithFormat:@"/users/%@/repos", self.username]; 
         [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resource objectMapping:mapping  delegate:omDelegate];        
     }
-
-    
-
 }
 
 

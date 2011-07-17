@@ -11,7 +11,9 @@
 #import "Models.h"
 
 @interface ObjectMapperDelegate : NSObject <RKObjectLoaderDelegate> {
-    
+    NSString * _username;
 }
+
+@property (nonatomic, retain) NSString * username;
 
 @end

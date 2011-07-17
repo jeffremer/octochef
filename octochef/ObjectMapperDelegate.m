@@ -10,20 +10,22 @@
 
 
 @implementation ObjectMapperDelegate
--(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    NSLog(@"count of objects: %d", [objects count]);
-    
+
+@synthesize username;
+
+-(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
     if ([objects count] > 0) {
         id firstClass = [[objects objectAtIndex:0] class];
         if (firstClass == [Repository class]) {
             for (id object in objects) {
                 Repository* repo = object;
-                NSLog(@"Loaded repository: %@", repo.name);
+                NSLog(@"Loaded repository from server: %@", repo.name);
             }
                         
             NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
             NSString *libraryDirectory = [paths objectAtIndex:0];
-            NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:@"Repositories.txt"];
+            NSString *repoFilename =  [NSString stringWithFormat:@"Repositories-", self.username];
+            NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:repoFilename];
             [NSKeyedArchiver archiveRootObject:objects toFile:filePath];
             
         } else if (firstClass == [Branch class]) {
