@@ -16,12 +16,12 @@
 @synthesize created_at;
 @synthesize html_url;
 
-- (void)fetchBranchesWithDelegate:(ObjectMapperDelegate *)omDelegate {
++ (void)fetchBranchesWithDelegate:(ObjectMapperDelegate *)omDelegate{
     NSLog(@"Fetching branches from server");
     
     RKObjectMapping* branchMapping = [RKObjectMapping mappingForClass:[Branch class]];
     
-    NSString *resource = [NSString stringWithFormat:@"/repos/%@/%@/branches", [UserSingleton sharedUser].username, self.name]; 
+    NSString *resource = [NSString stringWithFormat:@"/repos/%@/%@/branches", [UserSingleton sharedUser].username, omDelegate.currentRepository]; 
 
     [branchMapping mapAttributes:@"name", nil];
     [branchMapping mapKeyPathsToAttributes:@"commit.sha", @"sha",  nil];

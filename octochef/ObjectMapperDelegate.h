@@ -12,8 +12,12 @@
 
 @interface ObjectMapperDelegate : NSObject <RKObjectLoaderDelegate> {
     NSString * _username;
+    NSString * _currentRepo;
+    NSString * _currentBranch;
 }
 
 @property (nonatomic, retain) NSString * username;
+@property (nonatomic, retain) NSString * currentRepository;
+@property (nonatomic, retain) NSString * currentBranch;
 
 @end

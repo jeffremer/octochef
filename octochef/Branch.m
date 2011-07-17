@@ -32,13 +32,14 @@
     }    
 }
 
--(void) fetchTreeWithDelegate:(ObjectMapperDelegate*) omDelegate andRepo:(NSString *)repo {
++(void) fetchTreeWithDelegate:(ObjectMapperDelegate*) omDelegate {
     NSLog(@"Fetching tree from server");
     RKObjectMapping* treeMapping = [RKObjectMapping mappingForClass:[Tree class]];
     
     RKObjectMapping* leafMapping = [RKObjectMapping mappingForClass:[Leaf class]];
     
-    NSString *resource = [NSString stringWithFormat:@"/repos/%@/%@/git/trees/%@?recursive=1", omDelegate.username, repo, self.sha]; 
+    NSString *resource = [NSString stringWithFormat:@"/repos/%@/%@/git/trees/%@?recursive=1", [UserSingleton sharedUser].username, 
+                          omDelegate.currentRepository, omDelegate.currentBranch]; 
     //@"/repos/smithclay/lthmobile/git/trees/790f0f55353ded146de545dc5ff78a9dffa5929e?recursive=1"
     [leafMapping mapAttributes:@"path", @"sha", @"size", nil];
     [treeMapping hasMany:@"tree" withObjectMapping:leafMapping];

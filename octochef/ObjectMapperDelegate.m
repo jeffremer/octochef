@@ -11,14 +11,21 @@
 @implementation ObjectMapperDelegate
 
 @synthesize username;
+@synthesize currentRepository;
+@synthesize currentBranch;
 
 -(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
     if ([objects count] > 0) {
         id firstClass = [[objects objectAtIndex:0] class];
         if (firstClass == [Branch class]) {
             Branch* branch = [objects objectAtIndex:0];
+            
+            ObjectMapperDelegate * omd = [[ObjectMapperDelegate alloc] init];
+            omd.currentRepository = self.currentRepository;
+            omd.currentBranch = branch.sha;
+            
             NSLog(@"Loaded branch: %@: %@", branch.name, branch.sha);
-            [branch fetchTreeWithDelegate:self]; 
+            [Branch fetchTreeWithDelegate:omd];
         } else if (firstClass == [Tree class]) {
             for (id object in objects) {
                 Tree* tree = object;
