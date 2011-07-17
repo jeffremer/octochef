@@ -10,5 +10,5 @@
 
 
 @implementation Tree
-
+@synthesize tree;
 @end

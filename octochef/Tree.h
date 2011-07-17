@@ -10,7 +10,9 @@
 
 
 @interface Tree : NSObject {
-    
+    NSArray * _tree;
 }
+
+@property (nonatomic, retain) NSArray * tree;
 
 @end

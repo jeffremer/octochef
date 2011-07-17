@@ -10,7 +10,10 @@
 
 
 @interface Blob : NSObject {
-    
+    NSString * _content;
+    NSString * _encoding;
 }
+@property (nonatomic, retain) NSString * content;
+@property (nonatomic, retain) NSString * encoding;
 
 @end

@@ -10,5 +10,6 @@
 
 
 @implementation Branch
-
+@synthesize name;
+@synthesize sha;
 @end

@@ -10,7 +10,10 @@
 
 
 @interface Branch : NSObject {
-    
+    NSString * _name;
+    NSString * _sha;
 }
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * sha;
 
 @end

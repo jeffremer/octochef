@@ -10,5 +10,6 @@
 
 
 @implementation Blob
-
+@synthesize content;
+@synthesize encoding;
 @end

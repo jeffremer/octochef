@@ -10,5 +10,7 @@
 
 
 @implementation Leaf
-
+@synthesize path;
+@synthesize size;
+@synthesize sha;
 @end

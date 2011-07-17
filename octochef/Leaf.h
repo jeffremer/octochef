@@ -10,7 +10,12 @@
 
 
 @interface Leaf : NSObject {
-    
+    NSString * _path;
+    NSString * _sha;
+    NSUInteger _size;
 }
+@property (nonatomic, retain) NSString * path;
+@property (nonatomic, retain) NSString * sha;
+@property (nonatomic) NSUInteger  size;
 
 @end
