@@ -18,6 +18,7 @@
         Leaf * leaf = object;
         // leaf.path <-- filter on this
         NSLog(@"leaf: %@", leaf.sha);
+        //[leaf fetchBlobWithDelegate:<#(ObjectMapperDelegate *)#> andRepo:<#(NSString *)#> andSha:<#(NSString *)#>
     }
 }
 @end

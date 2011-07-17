@@ -8,10 +8,29 @@
 
 #import "Models.h"
 #import "ObjectMapperDelegate.h"
+#import "UserSingleton.h"
 
 @implementation Branch
 @synthesize name;
 @synthesize sha;
+
++(void) createBranchDirectory:(NSString *)repo andSha:(NSString *)sha {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString * path = [[[[paths objectAtIndex:0] stringByAppendingPathComponent:[UserSingleton sharedUser].username]
+                       stringByAppendingPathComponent:repo]
+                       stringByAppendingPathComponent:sha];
+    NSError *error;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        if (![[NSFileManager defaultManager] createDirectoryAtPath:path
+                                       withIntermediateDirectories:NO
+                                                        attributes:nil
+                                                             error:&error])
+        {
+            NSLog(@"Create directory error: %@", error);
+        }
+    }    
+}
 
 -(void) fetchTreeWithDelegate:(ObjectMapperDelegate*) omDelegate andRepo:(NSString *)repo {
     NSLog(@"Fetching tree from server");

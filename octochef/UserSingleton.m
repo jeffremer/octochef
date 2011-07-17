@@ -25,4 +25,21 @@ static UserSingleton *sharedSingleton;
 + (UserSingleton *)sharedUser {
     return sharedSingleton;
 }
+
++ (void) createUserDirectory: (NSString *) user {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString * path = [[paths objectAtIndex:0] stringByAppendingPathComponent:user];
+	NSError *error;
+	if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+	{
+		if (![[NSFileManager defaultManager] createDirectoryAtPath:path
+									   withIntermediateDirectories:NO
+														attributes:nil
+															 error:&error])
+		{
+			NSLog(@"Create directory error: %@", error);
+		}
+	}
+}
+
 @end

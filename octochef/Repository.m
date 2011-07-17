@@ -8,6 +8,7 @@
 
 #import "Repository.h"
 #import "ObjectMapperDelegate.h"
+#import "UserSingleton.h"
 
 @implementation Repository
 @synthesize name;
@@ -20,13 +21,34 @@
     
     RKObjectMapping* branchMapping = [RKObjectMapping mappingForClass:[Branch class]];
     
-    NSString *resource = [NSString stringWithFormat:@"/repos/%@/%@/branches", omDelegate.username, self.name]; 
+    NSString *resource = [NSString stringWithFormat:@"/repos/%@/%@/branches", [UserSingleton sharedUser].username, self.name]; 
 
     [branchMapping mapAttributes:@"name", nil];
     [branchMapping mapKeyPathsToAttributes:@"commit.sha", @"sha",  nil];
     
     [[RKObjectManager sharedManager]
      loadObjectsAtResourcePath:resource objectMapping:branchMapping delegate:omDelegate];
+}
+
++(void) buildDirectoryTree: (NSArray *)repos {
+    for (id object in repos) {
+        Repository * repo = object;
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+        NSString * path = [[[paths objectAtIndex:0] stringByAppendingPathComponent:[UserSingleton sharedUser].username]
+                           stringByAppendingPathComponent:repo.name];
+        NSError *error;
+        if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+        {
+            if (![[NSFileManager defaultManager] createDirectoryAtPath:path
+                                           withIntermediateDirectories:NO
+                                                            attributes:nil
+                                                                 error:&error])
+            {
+                NSLog(@"Create directory error: %@", error);
+            }
+        }
+    }
+    
 }
 
 // Encode an object for an archive
