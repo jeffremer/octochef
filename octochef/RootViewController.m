@@ -10,42 +10,26 @@
 
 #import "DetailViewController.h"
 
-#import "LoginViewController.h"
-
 @implementation RootViewController
 		
 @synthesize detailViewController;
-
-@synthesize username;
-@synthesize password;
-@synthesize loggedIn;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    self.loggedIn = NO;
 }
 
 		
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewWillAppear:animated];        
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    if(!self.loggedIn) {
-        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        
-        loginViewController.delegate = self;
-        [self presentModalViewController:loginViewController animated:NO];
-        
-        [loginViewController release];            
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -152,14 +136,6 @@
 {
     [detailViewController release];
     [super dealloc];
-}
-
-#pragma mark - LoginDelegate
-
-- (void)userDidLogInWith:(NSString *)uname and:(NSString *)passwd {
-    self.username = uname;
-    self.password = passwd;
-    self.loggedIn = YES;
 }
 
 @end

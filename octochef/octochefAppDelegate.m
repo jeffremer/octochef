@@ -26,7 +26,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window.rootViewController = self.splitViewController;        
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

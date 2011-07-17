@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F414D5E13D2753700C21E64 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F414D5C13D2753700C21E64 /* MainViewController.m */; };
+		1F414D5F13D2753700C21E64 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F414D5C13D2753700C21E64 /* MainViewController.m */; };
+		1F414D6013D2753700C21E64 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F414D5D13D2753700C21E64 /* MainViewController.xib */; };
+		1F414D6113D2753700C21E64 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F414D5D13D2753700C21E64 /* MainViewController.xib */; };
 		1FB336A013D202A8008F6E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB3369F13D202A8008F6E6B /* UIKit.framework */; };
 		1FB336A213D202A8008F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A113D202A8008F6E6B /* Foundation.framework */; };
 		1FB336A413D202A8008F6E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A313D202A8008F6E6B /* CoreGraphics.framework */; };
@@ -127,6 +131,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F414D5B13D2753700C21E64 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		1F414D5C13D2753700C21E64 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		1F414D5D13D2753700C21E64 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1FB3369B13D202A8008F6E6B /* octochef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = octochef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB3369F13D202A8008F6E6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FB336A113D202A8008F6E6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -251,6 +258,9 @@
 				1FD009B713D2271E00ED2478 /* LoginViewController.m */,
 				1FB336A613D202A8008F6E6B /* Supporting Files */,
 				1FD009C713D2506100ED2478 /* LoginDelegate.h */,
+				1F414D5B13D2753700C21E64 /* MainViewController.h */,
+				1F414D5C13D2753700C21E64 /* MainViewController.m */,
+				1F414D5D13D2753700C21E64 /* MainViewController.xib */,
 			);
 			path = octochef;
 			sourceTree = "<group>";
@@ -480,6 +490,7 @@
 				1FD009BF13D2316D00ED2478 /* octochef.png in Resources */,
 				1FD009C113D2347400ED2478 /* background.jpg in Resources */,
 				1FD009C313D23A2D00ED2478 /* title.png in Resources */,
+				1F414D6013D2753700C21E64 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +501,7 @@
 				1FB336CD13D202A8008F6E6B /* InfoPlist.strings in Resources */,
 				1FB336D013D202A8008F6E6B /* octochefTests.h in Resources */,
 				1FD009BC13D2271E00ED2478 /* LoginViewController.xib in Resources */,
+				1F414D6113D2753700C21E64 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +533,7 @@
 				1FB336B613D202A8008F6E6B /* DetailViewController.m in Sources */,
 				1FB336BC13D202A8008F6E6B /* RootViewController.m in Sources */,
 				1FD009B913D2271E00ED2478 /* LoginViewController.m in Sources */,
+				1F414D5E13D2753700C21E64 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +543,7 @@
 			files = (
 				1FB336D213D202A8008F6E6B /* octochefTests.m in Sources */,
 				1FD009BA13D2271E00ED2478 /* LoginViewController.m in Sources */,
+				1F414D5F13D2753700C21E64 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
