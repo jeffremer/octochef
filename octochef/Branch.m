@@ -7,9 +7,14 @@
 //
 
 #import "Branch.h"
-
+#import "ObjectMapperDelegate.h"
 
 @implementation Branch
 @synthesize name;
 @synthesize sha;
+
+-(void) fetchTreeWithDelegate: (ObjectMapperDelegate*) omDelegate {
+    
+}
+
 @end

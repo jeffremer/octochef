@@ -8,7 +8,6 @@
 
 #import "ObjectMapperDelegate.h"
 
-
 @implementation ObjectMapperDelegate
 
 @synthesize username;
@@ -20,19 +19,12 @@
             for (id object in objects) {
                 Repository* repo = object;
                 NSLog(@"Loaded repository from server: %@", repo.name);
+                [repo fetchBranchesWithDelegate:self];
             }
-                        
-            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-            NSString *libraryDirectory = [paths objectAtIndex:0];
-            NSString *repoFilename =  [NSString stringWithFormat:@"Repositories-", self.username];
-            NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:repoFilename];
-            [NSKeyedArchiver archiveRootObject:objects toFile:filePath];
-            
         } else if (firstClass == [Branch class]) {
-            for (id object in objects) {
-                Branch* branch = object;
-                NSLog(@"Loaded branch: %@: %@", branch.name, branch.sha);
-            }
+            Branch* branch = [objects objectAtIndex:0];
+            NSLog(@"Loaded branch: %@: %@", branch.name, branch.sha);
+            [branch fetchTreeWithDelegate:self]; 
         } else if (firstClass == [Tree class]) {
             for (id object in objects) {
                 Tree* tree = object;

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class ObjectMapperDelegate;
 
 @interface Branch : NSObject {
     NSString * _name;
@@ -15,5 +15,6 @@
 }
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * sha;
+-(void) fetchTreeWithDelegate: (ObjectMapperDelegate*) omDelegate;
 
 @end

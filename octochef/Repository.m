@@ -7,13 +7,27 @@
 //
 
 #import "Repository.h"
-
+#import "ObjectMapperDelegate.h"
 
 @implementation Repository
 @synthesize name;
 @synthesize description;
 @synthesize created_at;
 @synthesize html_url;
+
+- (void)fetchBranchesWithDelegate:(ObjectMapperDelegate *)omDelegate {
+    NSLog(@"Fetching branches from server");
+    
+    RKObjectMapping* branchMapping = [RKObjectMapping mappingForClass:[Branch class]];
+    
+    NSString *resource = [NSString stringWithFormat:@"/repos/%@/%@/branches", omDelegate.username, self.name]; 
+
+    [branchMapping mapAttributes:@"name", nil];
+    [branchMapping mapKeyPathsToAttributes:@"commit.sha", @"sha",  nil];
+    
+    [[RKObjectManager sharedManager]
+     loadObjectsAtResourcePath:resource objectMapping:branchMapping delegate:omDelegate];
+}
 
 // Encode an object for an archive
 - (void)encodeWithCoder:(NSCoder *)coder
@@ -32,32 +46,7 @@
         description  = [[coder decodeObjectForKey:@"description"] retain];
         html_url  = [[coder decodeObjectForKey:@"html_url"] retain];
         created_at  = [[coder decodeObjectForKey:@"html_url"] retain];
-
     }
     return self;
 }
-
-/*-(void) archiveToFile: (NSString*) path {
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData: data];
-    [archiver encodeObject: self forKey: @"repository"];
-    [archiver finishEncoding];
-    [archiver release];
-    [data writeToFile: path atomically: YES];
-    [data release];
-}
-
-+(Repository*) newFromFile: (NSString*) path {
-    NSData *data = [[NSData alloc] initWithContentsOfFile: path];
-    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData: data];
-    Repository *myArchive = [unarchiver decodeObjectForKey: @"repository"];
-    [unarchiver finishDecoding];
-    
-    if (myArchive) {
-        [myArchive retain];
-    } 
-    [unarchiver release];
-    [data release];
-    return myArchive;
-}*/
 @end

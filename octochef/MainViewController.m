@@ -91,16 +91,18 @@
     NSString *repoFilename =  [NSString stringWithFormat:@"Repositories-", self.username];
     NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:repoFilename];
     
+    ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
+    omDelegate.username = self.username;
+    
     NSArray *repos = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     if (repos != nil) {
         NSLog(@"Repositories exist locally.");
         for (id object in repos) {
             Repository * repo = object;
             NSLog(@"%@", repo.name);
+            [repo fetchBranchesWithDelegate:omDelegate];
         }
     } else {
-        ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
-        omDelegate.username = self.username;
         RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
         [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
         NSString *resource = [NSString stringWithFormat:@"/users/%@/repos", self.username]; 
