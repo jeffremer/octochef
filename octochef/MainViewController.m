@@ -30,6 +30,8 @@
 - (void)dealloc
 {
     [super dealloc];
+    [username release];
+    [password release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,12 +84,23 @@
     self.username = uname;
     self.password = passwd;
     self.loggedIn = YES;
+        
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *libraryDirectory = [paths objectAtIndex:0];
+    // TODO: save repos by user name!
+    NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:@"Repositories.txt"];
     
-    ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
-    
-    RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
-    [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/users/smithclay/repos" objectMapping:mapping  delegate:omDelegate]; 
+    NSArray *repos = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    if (repos != nil) {
+        NSLog(@"repos exist locally!");
+    } else {
+        ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
+        RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
+        [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
+        [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/users/smithclay/repos" objectMapping:mapping  delegate:omDelegate];         
+    }
+
+
 }
 
 

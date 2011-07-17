@@ -20,10 +20,16 @@
                 Repository* repo = object;
                 NSLog(@"Loaded repository: %@", repo.name);
             }
+                        
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+            NSString *libraryDirectory = [paths objectAtIndex:0];
+            NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:@"Repositories.txt"];
+            [NSKeyedArchiver archiveRootObject:objects toFile:filePath];
+            
         } else if (firstClass == [Branch class]) {
             for (id object in objects) {
                 Branch* branch = object;
-                NSLog(@"Loaded brach: %@: %@", branch.name, branch.sha);
+                NSLog(@"Loaded branch: %@: %@", branch.name, branch.sha);
             }
         } else if (firstClass == [Tree class]) {
             for (id object in objects) {

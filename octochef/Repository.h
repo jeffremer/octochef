@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Repository : NSObject {
+@interface Repository : NSObject <NSCoding> {
     NSString * _name;
     NSString * _description;
     NSString * _created_at;
