@@ -34,6 +34,12 @@
 		1FD009BF13D2316D00ED2478 /* octochef.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009BE13D2316D00ED2478 /* octochef.png */; };
 		1FD009C113D2347400ED2478 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009C013D2347400ED2478 /* background.jpg */; };
 		1FD009C313D23A2D00ED2478 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD009C213D23A2D00ED2478 /* title.png */; };
+		947D15EB13D2814F00253595 /* Branch.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15E813D2814F00253595 /* Branch.m */; };
+		947D15EC13D2814F00253595 /* Leaf.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15EA13D2814F00253595 /* Leaf.m */; };
+		947D15FC13D2815D00253595 /* Blob.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15ED13D2815D00253595 /* Blob.m */; };
+		947D160013D2815D00253595 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15F713D2815D00253595 /* NSDataAdditions.m */; };
+		947D160113D2815D00253595 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15F913D2815D00253595 /* Repository.m */; };
+		947D160213D2815D00253595 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15FB13D2815D00253595 /* Tree.m */; };
 		9498887513D211950072506F /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887113D211950072506F /* libRestKitJSONParserJSONKit.a */; };
 		9498887613D211950072506F /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887213D211950072506F /* libRestKitNetwork.a */; };
 		9498887713D211950072506F /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887313D211950072506F /* libRestKitObjectMapping.a */; };
@@ -163,6 +169,18 @@
 		1FD009C013D2347400ED2478 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1FD009C213D23A2D00ED2478 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		1FD009C713D2506100ED2478 /* LoginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDelegate.h; sourceTree = "<group>"; };
+		947D15E713D2814F00253595 /* Blob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blob.h; sourceTree = "<group>"; };
+		947D15E813D2814F00253595 /* Branch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Branch.m; sourceTree = "<group>"; };
+		947D15E913D2814F00253595 /* Leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leaf.h; sourceTree = "<group>"; };
+		947D15EA13D2814F00253595 /* Leaf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leaf.m; sourceTree = "<group>"; };
+		947D15ED13D2815D00253595 /* Blob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blob.m; sourceTree = "<group>"; };
+		947D15EE13D2815D00253595 /* Branch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Branch.h; sourceTree = "<group>"; };
+		947D15F613D2815D00253595 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		947D15F713D2815D00253595 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		947D15F813D2815D00253595 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		947D15F913D2815D00253595 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		947D15FA13D2815D00253595 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		947D15FB13D2815D00253595 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 		9498884713D210110072506F /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		9498887113D211950072506F /* libRestKitJSONParserJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserJSONKit.a; sourceTree = SOURCE_ROOT; };
 		9498887213D211950072506F /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
@@ -246,6 +264,7 @@
 		1FB336A513D202A8008F6E6B /* octochef */ = {
 			isa = PBXGroup;
 			children = (
+				947D160313D2816900253595 /* Models */,
 				1FD009C613D23E5700ED2478 /* Nibs */,
 				1FD009C513D23E4100ED2478 /* Images */,
 				1FB336AE13D202A8008F6E6B /* octochefAppDelegate.h */,
@@ -314,6 +333,25 @@
 				1FD009B813D2271E00ED2478 /* LoginViewController.xib */,
 			);
 			name = Nibs;
+			sourceTree = "<group>";
+		};
+		947D160313D2816900253595 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				947D15ED13D2815D00253595 /* Blob.m */,
+				947D15EE13D2815D00253595 /* Branch.h */,
+				947D15F613D2815D00253595 /* NSDataAdditions.h */,
+				947D15F713D2815D00253595 /* NSDataAdditions.m */,
+				947D15F813D2815D00253595 /* Repository.h */,
+				947D15F913D2815D00253595 /* Repository.m */,
+				947D15FA13D2815D00253595 /* Tree.h */,
+				947D15FB13D2815D00253595 /* Tree.m */,
+				947D15E713D2814F00253595 /* Blob.h */,
+				947D15E813D2814F00253595 /* Branch.m */,
+				947D15E913D2814F00253595 /* Leaf.h */,
+				947D15EA13D2814F00253595 /* Leaf.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		9498884813D210110072506F /* Products */ = {
@@ -534,6 +572,12 @@
 				1FB336BC13D202A8008F6E6B /* RootViewController.m in Sources */,
 				1FD009B913D2271E00ED2478 /* LoginViewController.m in Sources */,
 				1F414D5E13D2753700C21E64 /* MainViewController.m in Sources */,
+				947D15EB13D2814F00253595 /* Branch.m in Sources */,
+				947D15EC13D2814F00253595 /* Leaf.m in Sources */,
+				947D15FC13D2815D00253595 /* Blob.m in Sources */,
+				947D160013D2815D00253595 /* NSDataAdditions.m in Sources */,
+				947D160113D2815D00253595 /* Repository.m in Sources */,
+				947D160213D2815D00253595 /* Tree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
