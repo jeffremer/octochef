@@ -40,6 +40,7 @@
 		947D160013D2815D00253595 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15F713D2815D00253595 /* NSDataAdditions.m */; };
 		947D160113D2815D00253595 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15F913D2815D00253595 /* Repository.m */; };
 		947D160213D2815D00253595 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D15FB13D2815D00253595 /* Tree.m */; };
+		947D160713D2862100253595 /* ObjectMapperDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 947D160613D2862100253595 /* ObjectMapperDelegate.m */; };
 		9498887513D211950072506F /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887113D211950072506F /* libRestKitJSONParserJSONKit.a */; };
 		9498887613D211950072506F /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887213D211950072506F /* libRestKitNetwork.a */; };
 		9498887713D211950072506F /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9498887313D211950072506F /* libRestKitObjectMapping.a */; };
@@ -181,6 +182,9 @@
 		947D15F913D2815D00253595 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 		947D15FA13D2815D00253595 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
 		947D15FB13D2815D00253595 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
+		947D160413D2857E00253595 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		947D160513D2862100253595 /* ObjectMapperDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapperDelegate.h; sourceTree = "<group>"; };
+		947D160613D2862100253595 /* ObjectMapperDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectMapperDelegate.m; sourceTree = "<group>"; };
 		9498884713D210110072506F /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		9498887113D211950072506F /* libRestKitJSONParserJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserJSONKit.a; sourceTree = SOURCE_ROOT; };
 		9498887213D211950072506F /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
@@ -279,6 +283,8 @@
 				1FD009C713D2506100ED2478 /* LoginDelegate.h */,
 				1F414D5B13D2753700C21E64 /* MainViewController.h */,
 				1F414D5C13D2753700C21E64 /* MainViewController.m */,
+				947D160513D2862100253595 /* ObjectMapperDelegate.h */,
+				947D160613D2862100253595 /* ObjectMapperDelegate.m */,
 				1F414D5D13D2753700C21E64 /* MainViewController.xib */,
 			);
 			path = octochef;
@@ -350,6 +356,7 @@
 				947D15E813D2814F00253595 /* Branch.m */,
 				947D15E913D2814F00253595 /* Leaf.h */,
 				947D15EA13D2814F00253595 /* Leaf.m */,
+				947D160413D2857E00253595 /* Models.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -578,6 +585,7 @@
 				947D160013D2815D00253595 /* NSDataAdditions.m in Sources */,
 				947D160113D2815D00253595 /* Repository.m in Sources */,
 				947D160213D2815D00253595 /* Tree.m in Sources */,
+				947D160713D2862100253595 /* ObjectMapperDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
