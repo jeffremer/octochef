@@ -67,10 +67,14 @@
 
 - (IBAction)login:(id)sender {    
     [RKClient clientWithBaseURL:@"https://api.github.com"];
+    [RKObjectManager objectManagerWithBaseURL:@"https://api.github.com"];
     [RKClient sharedClient].forceBasicAuthentication = YES;
     [RKClient sharedClient].username = self.usernameField.text;
     [RKClient sharedClient].password = self.passwordField.text;
 
+    [RKObjectManager sharedManager].client = [RKClient sharedClient];
+
+    
     [[RKClient sharedClient] get:@"/user" delegate: self];
 }
 

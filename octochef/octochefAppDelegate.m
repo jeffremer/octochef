@@ -14,7 +14,6 @@
 
 @implementation octochefAppDelegate
 
-
 @synthesize window=_window;
 
 @synthesize splitViewController=_splitViewController;

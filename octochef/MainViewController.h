@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 #import "LoginDelegate.h"
 
 @interface MainViewController : UISplitViewController <LoginDelegate> {

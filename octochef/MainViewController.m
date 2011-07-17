@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 #import "LoginViewController.h"
+#import "Models.h"
+#import "ObjectMapperDelegate.h"
 
 @implementation MainViewController
 
@@ -80,6 +82,12 @@
     self.username = uname;
     self.password = passwd;
     self.loggedIn = YES;
+    
+    ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
+    
+    RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
+    [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/users/smithclay/repos" objectMapping:mapping  delegate:omDelegate]; 
 }
 
 
