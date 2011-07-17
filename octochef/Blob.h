@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSString * encoding;
 -(void)writeBlobToFile:(ObjectMapperDelegate *)omDelegate;
++ (NSData *)decodeBase64WithString:(NSString *)strBase64;
+
 @end
