@@ -12,6 +12,8 @@
 
 #import "Recipe.h"
 
+#import "UserSingleton.h"
+
 @implementation RootViewController
 		
 @synthesize detailViewController;
@@ -21,15 +23,6 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    
-    recipesArray = [[NSMutableArray alloc] init];
-    Recipe *aRecipe = [[Recipe alloc] init];
-    aRecipe.title = @"Chocolate Chip Cookies";
-    aRecipe.content = @"# Chocolate Chip Cookies\n\n## Ingredients\n\n";
-    
-    [recipesArray addObject:aRecipe];
-    [aRecipe retain];
-    
 }
 
 		
@@ -41,6 +34,33 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [self loadRecipes];
+}
+
+- (void) loadRecipes {
+    recipesArray = [[NSMutableArray alloc] init];
+    NSString *user = [UserSingleton sharedUser].username;
+    if(user) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+        NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:user];
+        NSArray *repoDirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
+        if([repoDirs count] > 0) {
+            for(NSString *repoDir in repoDirs) {
+                NSString *repoPath = [path stringByAppendingPathComponent:repoDir];
+                NSArray *recipeFilenames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:repoPath error:nil];
+                for(NSString *recipeFilename in recipeFilenames) {
+                    Recipe *aRecipe = [[Recipe alloc] init];
+                    aRecipe.title = recipeFilename;
+                    aRecipe.content = [[NSString alloc] initWithData:[[NSFileManager defaultManager] contentsAtPath:[repoPath stringByAppendingPathComponent:recipeFilename]] encoding:NSUTF8StringEncoding];
+                    
+                    [recipesArray addObject:aRecipe];
+                    [aRecipe release];                    
+                }
+            }
+            [self.tableView reloadData];
+        }
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated

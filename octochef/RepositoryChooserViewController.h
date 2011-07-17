@@ -19,5 +19,6 @@
 @property (nonatomic, retain) NSMutableArray *repositoriesArray;
 @property (nonatomic, retain) IBOutlet UIToolbar *topToolbar;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) id delegate;
 
 @end

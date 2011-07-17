@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "UserSingleton.h"
 
 @implementation LoginViewController
 
@@ -107,7 +108,7 @@
         if([self.delegate respondsToSelector:@selector(userDidLogInWith:and:)]) {
             [self.delegate userDidLogInWith: self.usernameField.text and: self.passwordField.text];
         }
-        
+        [UserSingleton createUserDirectory: self.usernameField.text];
         [self dismissModalViewControllerAnimated:YES];
     } else if ([response isJSON]) {
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Problem Logging In"  

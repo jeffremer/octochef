@@ -21,6 +21,7 @@
 @synthesize loggedIn;
 
 @synthesize repositories;
+@synthesize rootViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +60,7 @@
 
 -(void)presentRepositoryChooserView {
     RepositoryChooserViewController *repositoryChooserViewController = [[RepositoryChooserViewController alloc] initWithNibName:@"RepositoryChooserViewController" bundle:nil];
+    repositoryChooserViewController.delegate = self;
     repositoryChooserViewController.repositoriesArray = self.repositories;
     repositoryChooserViewController.modalPresentationStyle = UIModalPresentationPageSheet;
     [self presentModalViewController:repositoryChooserViewController animated:YES];
@@ -111,13 +113,15 @@
 -(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
     if ([objects count] > 0 && [[objects objectAtIndex:0] class] == [Repository class]) {
         self.repositories = [objects mutableCopy];
-        // Build directory tree of respositories
-        //[Repository buildDirectoryTree:objects];
     }
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
     NSLog(@"Trouble loading repositories %@", error);
+}
+
+- (void) finishedChoosing {
+    [self.rootViewController loadRecipes];
 }
 
 @end

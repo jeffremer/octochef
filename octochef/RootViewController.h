@@ -14,6 +14,7 @@
     NSMutableArray *recipesArray;
 }
 
+-(void) loadRecipes;
 		
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 

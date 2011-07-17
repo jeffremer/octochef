@@ -14,6 +14,7 @@
 @synthesize repositoriesArray;
 @synthesize tableView;
 @synthesize topToolbar;
+@synthesize delegate;
 - (void)dealloc
 {
     [super dealloc];
@@ -165,7 +166,7 @@
 
 - (IBAction) done:(id)sender {
     if([self.tableView respondsToSelector:@selector(indexPathsForSelectedRows)]) {
-        NSArray *indexes = [self.tableView indexPathsForSelectedRows];        
+        NSArray *indexes = [self.tableView indexPathsForSelectedRows];                
         for (NSIndexPath *path in indexes) {
             Repository *repo = [repositoriesArray objectAtIndex:path.row];
             NSLog(@"Selected repo %@", repo.name);
@@ -173,6 +174,10 @@
             del.currentRepository = repo.name;
             del.delegate = self;
             [Repository fetchBranchesWithDelegate:del];
+            [Repository buildDirectoryTree: [NSArray arrayWithObject:repo]];
+        }
+        if([self.delegate respondsToSelector:@selector(finishedChoosing)]) {
+            [self.delegate finishedChoosing];
         }
     }
 }
