@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 
-
 @implementation LoginViewController
 
 @synthesize usernameField = _usernameField;
@@ -66,16 +65,13 @@
 
 #pragma mark - Actions
 
-- (IBAction)login:(id)sender {
-    NSLog(@"Logging in with username %@ and password %@", self.usernameField.text, self.passwordField.text);
-    
-    // TODO Validate login and show an error if incorrect login
-    
-    if([self.delegate respondsToSelector:@selector(userDidLogInWith:and:)]) {
-        [self.delegate userDidLogInWith: self.usernameField.text and: self.passwordField.text];
-    }
-    
-    [self dismissModalViewControllerAnimated:YES];
+- (IBAction)login:(id)sender {    
+    [RKClient clientWithBaseURL:@"https://api.github.com"];
+    [RKClient sharedClient].forceBasicAuthentication = YES;
+    [RKClient sharedClient].username = self.usernameField.text;
+    [RKClient sharedClient].password = self.passwordField.text;
+
+    [[RKClient sharedClient] get:@"/user" delegate: self];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -98,5 +94,29 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 
+}
+
+#pragma mark - RKRequestDelegate
+
+- (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
+    if([response isOK]) {
+        if([self.delegate respondsToSelector:@selector(userDidLogInWith:and:)]) {
+            [self.delegate userDidLogInWith: self.usernameField.text and: self.passwordField.text];
+        }
+        
+        [self dismissModalViewControllerAnimated:YES];
+    } else if ([response isJSON]) {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Problem Logging In"  
+                                                          message:@"Sorry, there was trouble authenticating you, please try again."  
+                                                         delegate:nil  
+                                                cancelButtonTitle:@"OK"  
+                                                otherButtonTitles:nil];  
+        
+        [message show];  
+        
+        [message release];         
+        
+        [self.usernameField becomeFirstResponder];
+    }
 }
 @end

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 #import "LoginDelegate.h"
 
 @class RootViewController;
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate> {
+@interface LoginViewController : UIViewController <UITextFieldDelegate, RKRequestDelegate> {
     
 }
 
