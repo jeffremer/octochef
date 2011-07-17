@@ -10,6 +10,8 @@
 
 #import "RootViewController.h"
 
+#import "Touchdown.h"
+
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;

@@ -11,6 +11,13 @@
 		1F414D5F13D2753700C21E64 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F414D5C13D2753700C21E64 /* MainViewController.m */; };
 		1F414D6013D2753700C21E64 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F414D5D13D2753700C21E64 /* MainViewController.xib */; };
 		1F414D6113D2753700C21E64 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F414D5D13D2753700C21E64 /* MainViewController.xib */; };
+		1F5809C413D2984F008E124F /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5809B813D2984F008E124F /* array.c */; };
+		1F5809C513D2984F008E124F /* autolink.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5809BA13D2984F008E124F /* autolink.c */; };
+		1F5809C613D2984F008E124F /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5809BC13D2984F008E124F /* buffer.c */; };
+		1F5809C713D2984F008E124F /* html.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5809BE13D2984F008E124F /* html.c */; };
+		1F5809C813D2984F008E124F /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F5809C013D2984F008E124F /* markdown.c */; };
+		1F5809C913D2984F008E124F /* Touchdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5809C313D2984F008E124F /* Touchdown.m */; };
+		1F96D7F613D293FE00BDBB33 /* libTouchdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F96D7F513D293FE00BDBB33 /* libTouchdown.a */; };
 		1FB336A013D202A8008F6E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB3369F13D202A8008F6E6B /* UIKit.framework */; };
 		1FB336A213D202A8008F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A113D202A8008F6E6B /* Foundation.framework */; };
 		1FB336A413D202A8008F6E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB336A313D202A8008F6E6B /* CoreGraphics.framework */; };
@@ -141,6 +148,19 @@
 		1F414D5B13D2753700C21E64 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		1F414D5C13D2753700C21E64 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		1F414D5D13D2753700C21E64 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		1F5809B813D2984F008E124F /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
+		1F5809B913D2984F008E124F /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		1F5809BA13D2984F008E124F /* autolink.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = autolink.c; sourceTree = "<group>"; };
+		1F5809BB13D2984F008E124F /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
+		1F5809BC13D2984F008E124F /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		1F5809BD13D2984F008E124F /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		1F5809BE13D2984F008E124F /* html.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = html.c; sourceTree = "<group>"; };
+		1F5809BF13D2984F008E124F /* html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = html.h; sourceTree = "<group>"; };
+		1F5809C013D2984F008E124F /* markdown.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = markdown.c; sourceTree = "<group>"; };
+		1F5809C113D2984F008E124F /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markdown.h; sourceTree = "<group>"; };
+		1F5809C213D2984F008E124F /* Touchdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touchdown.h; sourceTree = "<group>"; };
+		1F5809C313D2984F008E124F /* Touchdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Touchdown.m; sourceTree = "<group>"; };
+		1F96D7F513D293FE00BDBB33 /* libTouchdown.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTouchdown.a; sourceTree = "<group>"; };
 		1FB3369B13D202A8008F6E6B /* octochef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = octochef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB3369F13D202A8008F6E6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FB336A113D202A8008F6E6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -211,6 +231,7 @@
 				1FB336A013D202A8008F6E6B /* UIKit.framework in Frameworks */,
 				1FB336A213D202A8008F6E6B /* Foundation.framework in Frameworks */,
 				1FB336A413D202A8008F6E6B /* CoreGraphics.framework in Frameworks */,
+				1F96D7F613D293FE00BDBB33 /* libTouchdown.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +248,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F5809CA13D29855008E124F /* Touchdown */ = {
+			isa = PBXGroup;
+			children = (
+				1F5809B813D2984F008E124F /* array.c */,
+				1F5809B913D2984F008E124F /* array.h */,
+				1F5809BA13D2984F008E124F /* autolink.c */,
+				1F5809BB13D2984F008E124F /* autolink.h */,
+				1F5809BC13D2984F008E124F /* buffer.c */,
+				1F5809BD13D2984F008E124F /* buffer.h */,
+				1F5809BE13D2984F008E124F /* html.c */,
+				1F5809BF13D2984F008E124F /* html.h */,
+				1F5809C013D2984F008E124F /* markdown.c */,
+				1F5809C113D2984F008E124F /* markdown.h */,
+				1F5809C213D2984F008E124F /* Touchdown.h */,
+				1F5809C313D2984F008E124F /* Touchdown.m */,
+			);
+			name = Touchdown;
+			sourceTree = "<group>";
+		};
 		1FB3369013D202A8008F6E6B = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				9498887F13D211BD0072506F /* libxml2.dylib */,
+				1F96D7F513D293FE00BDBB33 /* libTouchdown.a */,
 				9498887413D211950072506F /* libRestKitSupport.a */,
 				9498887313D211950072506F /* libRestKitObjectMapping.a */,
 				9498887213D211950072506F /* libRestKitNetwork.a */,
@@ -268,6 +309,7 @@
 		1FB336A513D202A8008F6E6B /* octochef */ = {
 			isa = PBXGroup;
 			children = (
+				1F5809CA13D29855008E124F /* Touchdown */,
 				947D160313D2816900253595 /* Models */,
 				1FD009C613D23E5700ED2478 /* Nibs */,
 				1FD009C513D23E4100ED2478 /* Images */,
@@ -586,6 +628,12 @@
 				947D160113D2815D00253595 /* Repository.m in Sources */,
 				947D160213D2815D00253595 /* Tree.m in Sources */,
 				947D160713D2862100253595 /* ObjectMapperDelegate.m in Sources */,
+				1F5809C413D2984F008E124F /* array.c in Sources */,
+				1F5809C513D2984F008E124F /* autolink.c in Sources */,
+				1F5809C613D2984F008E124F /* buffer.c in Sources */,
+				1F5809C713D2984F008E124F /* html.c in Sources */,
+				1F5809C813D2984F008E124F /* markdown.c in Sources */,
+				1F5809C913D2984F008E124F /* Touchdown.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
