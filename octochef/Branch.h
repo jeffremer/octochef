@@ -15,6 +15,6 @@
 }
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * sha;
--(void) fetchTreeWithDelegate: (ObjectMapperDelegate*) omDelegate;
+-(void) fetchTreeWithDelegate:(ObjectMapperDelegate*) omDelegate andRepo:(NSString *) repo;
 
 @end

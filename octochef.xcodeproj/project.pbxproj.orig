@@ -409,10 +409,13 @@
 				947D15E913D2814F00253595 /* Leaf.h */,
 				947D15EA13D2814F00253595 /* Leaf.m */,
 				947D160413D2857E00253595 /* Models.h */,
+<<<<<<< HEAD
 				1F5809CB13D29BFD008E124F /* Recipe.h */,
 				1F5809CC13D29BFD008E124F /* Recipe.m */,
+=======
 				94BF1C7E13D34E2300CCF2B2 /* UserSingleton.h */,
 				94BF1C7F13D34E2300CCF2B2 /* UserSingleton.m */,
+>>>>>>> 646888ca47e5a21562169db4648a9c685d18e9d9
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -649,9 +652,12 @@
 				1F5809C713D2984F008E124F /* html.c in Sources */,
 				1F5809C813D2984F008E124F /* markdown.c in Sources */,
 				1F5809C913D2984F008E124F /* Touchdown.m in Sources */,
+<<<<<<< HEAD
 				1F5809CD13D29BFD008E124F /* Recipe.m in Sources */,
 				1F193C1313D2B189004B6E54 /* RepositoryChooserViewController.m in Sources */,
+=======
 				94BF1C8013D34E2400CCF2B2 /* UserSingleton.m in Sources */,
+>>>>>>> 646888ca47e5a21562169db4648a9c685d18e9d9
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

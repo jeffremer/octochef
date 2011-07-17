@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class ObjectMapperDelegate;
 
 @interface Leaf : NSObject {
     NSString * _path;
@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSString * path;
 @property (nonatomic, retain) NSString * sha;
 @property (nonatomic) NSUInteger  size;
+-(void) fetchBlobWithDelegate:(ObjectMapperDelegate*) omDelegate andRepo:(NSString *) repo;
 
 @end
