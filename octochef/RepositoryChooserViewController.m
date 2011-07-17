@@ -148,10 +148,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * selectedRepo = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    ObjectMapperDelegate * omDelegate = [[ObjectMapperDelegate alloc] init];
-    omDelegate.currentRepository = selectedRepo;
-    [Repository fetchBranchesWithDelegate:omDelegate];
+//    NSString * selectedRepo = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+//    ObjectMapperDelegate * omDelegate = [[ObjectMapperDelegate alloc] init];
+//    omDelegate.currentRepository = selectedRepo;
+//    [Repository fetchBranchesWithDelegate:omDelegate];
     
     // Navigation logic may go here. Create and push another view controller.
     /*
@@ -165,12 +165,20 @@
 
 - (IBAction) done:(id)sender {
     if([self.tableView respondsToSelector:@selector(indexPathsForSelectedRows)]) {
-        NSArray *indexes = [self.tableView indexPathsForSelectedRows];
+        NSArray *indexes = [self.tableView indexPathsForSelectedRows];        
         for (NSIndexPath *path in indexes) {
             Repository *repo = [repositoriesArray objectAtIndex:path.row];
             NSLog(@"Selected repo %@", repo.name);
+            ObjectMapperDelegate *del = [[ObjectMapperDelegate alloc] init];
+            del.currentRepository = repo.name;
+            del.delegate = self;
+            [Repository fetchBranchesWithDelegate:del];
         }
     }
+}
+
+- (void) didFinishDownloading {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

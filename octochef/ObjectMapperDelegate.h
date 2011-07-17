@@ -21,6 +21,6 @@
 @property (nonatomic, retain) NSString * currentRepository;
 @property (nonatomic, retain) NSString * currentBranch;
 @property (nonatomic, retain) NSString * currentBlob;
-
+@property (nonatomic, retain) id delegate;
 
 @end

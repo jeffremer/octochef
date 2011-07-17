@@ -21,6 +21,7 @@
         ObjectMapperDelegate * newDelegate = [[ObjectMapperDelegate alloc] init];
         newDelegate.currentRepository = omDelegate.currentRepository;
         newDelegate.currentBlob = leaf.sha;
+        newDelegate.delegate = omDelegate.delegate;
         
         [Leaf fetchBlobWithDelegate:newDelegate];
         //[leaf fetchBlobWithDelegate:<#(ObjectMapperDelegate *)#> andRepo:<#(NSString *)#> andSha:<#(NSString *)#>

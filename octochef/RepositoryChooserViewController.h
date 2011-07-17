@@ -14,6 +14,7 @@
 }
 
 - (IBAction)done:(id)sender;
+- (void) didFinishDownloading;
 
 @property (nonatomic, retain) NSMutableArray *repositoriesArray;
 @property (nonatomic, retain) IBOutlet UIToolbar *topToolbar;

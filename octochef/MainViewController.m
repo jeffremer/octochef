@@ -112,7 +112,7 @@
     if ([objects count] > 0 && [[objects objectAtIndex:0] class] == [Repository class]) {
         self.repositories = [objects mutableCopy];
         // Build directory tree of respositories
-        [Repository buildDirectoryTree:objects];
+        //[Repository buildDirectoryTree:objects];
     }
 }
 
