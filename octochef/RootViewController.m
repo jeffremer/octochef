@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 
+#import "Recipe.h"
+
 @implementation RootViewController
 		
 @synthesize detailViewController;
@@ -19,6 +21,15 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    
+    recipesArray = [[NSMutableArray alloc] init];
+    Recipe *aRecipe = [[Recipe alloc] init];
+    aRecipe.title = @"Chocolate Chip Cookies";
+    aRecipe.content = @"# Chocolate Chip Cookies\n\n## Ingredients\n\n";
+    
+    [recipesArray addObject:aRecipe];
+    [aRecipe retain];
+    
 }
 
 		
@@ -55,7 +66,7 @@
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [recipesArray count];
     		
 }
 
@@ -69,7 +80,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
-    // Configure the cell
+    Recipe *aRecipe = [recipesArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = aRecipe.title;
     		
     return cell;
 }
@@ -107,15 +119,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here -- for example, create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    [self.detailViewController setDetailItem:[recipesArray objectAtIndex:indexPath.row]];
 }
 
 - (void)didReceiveMemoryWarning

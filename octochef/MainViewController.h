@@ -10,7 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "LoginDelegate.h"
 
-@interface MainViewController : UISplitViewController <LoginDelegate> {
+@interface MainViewController : UISplitViewController <LoginDelegate, RKObjectLoaderDelegate> {
     
 }
 
@@ -18,5 +18,7 @@
 @property (nonatomic, retain) NSString *password;
 
 @property BOOL loggedIn;
+
+@property (nonatomic, retain) NSMutableArray *repositories;
 
 @end
