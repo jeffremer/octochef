@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class Leaf;
 
 @interface Tree : NSObject {
     NSArray * _tree;
 }
 
 @property (nonatomic, retain) NSArray * tree;
+-(void)getRecipiesFromTree;
 
 @end
