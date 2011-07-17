@@ -12,6 +12,8 @@
 
 #import "Touchdown.h"
 
+#import "Recipe.h"
+
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
 - (void)configureView;
@@ -23,7 +25,7 @@
 
 @synthesize detailItem=_detailItem;
 
-@synthesize detailDescriptionLabel=_detailDescriptionLabel;
+@synthesize webView=_webView;
 
 @synthesize popoverController=_myPopoverController;
 
@@ -32,7 +34,7 @@
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
  */
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(Recipe*)newDetailItem
 {
     if (_detailItem != newDetailItem) {
         [_detailItem release];
@@ -49,9 +51,9 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
+    NSString *html = [Touchdown htmlFromMarkdown: [self.detailItem content]];
 
-    self.detailDescriptionLabel.text = [self.detailItem description];
+    [self.webView loadHTMLString: html baseURL:[NSURL URLWithString:@"http://octochef.me/recipe"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -132,7 +134,7 @@
     [_myPopoverController release];
     [_toolbar release];
     [_detailItem release];
-    [_detailDescriptionLabel release];
+    [_webView release];
     [super dealloc];
 }
 

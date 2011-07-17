@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "Models.h"
 #import "ObjectMapperDelegate.h"
+#import "RepositoryChooserViewController.h"
 
 @implementation MainViewController
 
@@ -17,6 +18,8 @@
 @synthesize username;
 @synthesize password;
 @synthesize loggedIn;
+
+@synthesize repositories;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,10 +56,20 @@
     [loginViewController release];            
 }
 
+-(void)presentRepositoryChooserView {
+    RepositoryChooserViewController *repositoryChooserViewController = [[RepositoryChooserViewController alloc] initWithNibName:@"RepositoryChooserViewController" bundle:nil];
+    repositoryChooserViewController.repositoriesArray = self.repositories;
+    repositoryChooserViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self presentModalViewController:repositoryChooserViewController animated:YES];
+    [repositoryChooserViewController release];
+}
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if(!self.loggedIn) {
         [self performSelector:@selector(presentLoginView) withObject:nil afterDelay:0];
+    } else if([self.repositories count] > 0) {
+        [self performSelector:@selector(presentRepositoryChooserView) withObject:nil afterDelay:0];
     }
 }
 
@@ -83,32 +96,23 @@
 - (void)userDidLogInWith:(NSString *)uname and:(NSString *)passwd {
     self.username = uname;
     self.password = passwd;
-    self.loggedIn = YES;
-        
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *libraryDirectory = [paths objectAtIndex:0];
+    self.loggedIn = YES;        
 
-    NSString *repoFilename =  [NSString stringWithFormat:@"Repositories-", self.username];
-    NSString *filePath =  [libraryDirectory stringByAppendingPathComponent:repoFilename];
-    
-    ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
-    omDelegate.username = self.username;
-    
-    NSArray *repos = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-    if (repos != nil) {
-        NSLog(@"Repositories exist locally.");
-        for (id object in repos) {
-            Repository * repo = object;
-            NSLog(@"%@", repo.name);
-            [repo fetchBranchesWithDelegate:omDelegate];
-        }
-    } else {
-        RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
-        [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
-        NSString *resource = [NSString stringWithFormat:@"/users/%@/repos", self.username]; 
-        [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resource objectMapping:mapping  delegate:omDelegate];        
+    RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
+    [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
+    NSString *resource = [NSString stringWithFormat:@"/users/%@/repos", self.username]; 
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resource objectMapping:mapping  delegate:self];
+}
+
+
+-(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
+    if ([objects count] > 0 && [[objects objectAtIndex:0] class] == [Repository class]) {
+        self.repositories = [objects mutableCopy];
     }
 }
 
+- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
+    NSLog(@"Trouble loading repositories %@", error);
+}
 
 @end
