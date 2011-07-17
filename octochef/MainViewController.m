@@ -11,6 +11,7 @@
 #import "Models.h"
 #import "ObjectMapperDelegate.h"
 #import "RepositoryChooserViewController.h"
+#import "UserSingleton.h"
 
 @implementation MainViewController
 
@@ -97,6 +98,8 @@
     self.username = uname;
     self.password = passwd;
     self.loggedIn = YES;        
+    
+    [UserSingleton sharedUser].username = self.username;
 
     RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
     [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
@@ -108,6 +111,8 @@
 -(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
     if ([objects count] > 0 && [[objects objectAtIndex:0] class] == [Repository class]) {
         self.repositories = [objects mutableCopy];
+        // Build directory tree of respositories
+        [Repository buildDirectoryTree:objects];
     }
 }
 

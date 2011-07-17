@@ -15,4 +15,6 @@
 
 @property (nonatomic, retain) NSString * username;
 + (UserSingleton *)sharedUser;
++(void) createUserDirectory: (NSString *) user;
+
 @end

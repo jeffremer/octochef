@@ -15,7 +15,8 @@
     NSString * _created_at;
     NSString * _html_url;
 }
--(void) fetchBranchesWithDelegate: (ObjectMapperDelegate*) omDelegate;
++(void) fetchBranchesWithDelegate: (ObjectMapperDelegate*) omDelegate;
++(void) buildDirectoryTree: (NSArray *)repos;
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * description;

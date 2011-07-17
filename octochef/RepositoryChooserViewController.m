@@ -8,6 +8,7 @@
 
 #import "RepositoryChooserViewController.h"
 #import "Repository.h"
+#include "ObjectMapperDelegate.h"
 
 @implementation RepositoryChooserViewController
 @synthesize repositoriesArray;
@@ -147,6 +148,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString * selectedRepo = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    ObjectMapperDelegate * omDelegate = [[ObjectMapperDelegate alloc] init];
+    omDelegate.currentRepository = selectedRepo;
+    [Repository fetchBranchesWithDelegate:omDelegate];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

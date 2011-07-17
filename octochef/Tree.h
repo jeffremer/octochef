@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class ObjectMapperDelegate;
 @class Leaf;
 
 @interface Tree : NSObject {
@@ -15,6 +15,6 @@
 }
 
 @property (nonatomic, retain) NSArray * tree;
--(void)getRecipiesFromTree;
+-(void)getRecipies: (ObjectMapperDelegate*) omDelegate;
 
 @end

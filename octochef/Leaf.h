@@ -17,6 +17,6 @@
 @property (nonatomic, retain) NSString * path;
 @property (nonatomic, retain) NSString * sha;
 @property (nonatomic) NSUInteger  size;
--(void) fetchBlobWithDelegate:(ObjectMapperDelegate*) omDelegate andRepo:(NSString *) repo;
++(void) fetchBlobWithDelegate:(ObjectMapperDelegate*)omDelegate;
 
 @end
