@@ -14,6 +14,7 @@
 @synthesize currentRepository;
 @synthesize currentBranch;
 @synthesize currentBlob;
+@synthesize delegate;
 
 -(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
     if ([objects count] > 0) {
@@ -24,6 +25,7 @@
             ObjectMapperDelegate * omd = [[ObjectMapperDelegate alloc] init];
             omd.currentRepository = self.currentRepository;
             omd.currentBranch = branch.sha;
+            omd.delegate = self.delegate;
             
             NSLog(@"Loaded branch: %@: %@", branch.name, branch.sha);
             [Branch fetchTreeWithDelegate:omd];
@@ -40,6 +42,9 @@
                 //NSString *someString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
                 NSLog(@"blob encoding: %@", blob.encoding);
                 [blob writeBlobToFile:self];
+            }
+            if([self.delegate respondsToSelector:@selector(didFinishDownloading)]) {
+                [self.delegate didFinishDownloading];
             }
         }
     }
