@@ -15,12 +15,15 @@
     NSString * _currentRepo;
     NSString * _currentBranch;
     NSString * _currentBlob;
+    NSString * _currentPath;
 }
 
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSString * currentRepository;
 @property (nonatomic, retain) NSString * currentBranch;
 @property (nonatomic, retain) NSString * currentBlob;
+@property (nonatomic, retain) NSString * currentPath;
+
 @property (nonatomic, retain) id delegate;
 
 @end

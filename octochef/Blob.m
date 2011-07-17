@@ -110,16 +110,11 @@ static const short _base64DecodingTable[256] = {
 -(void)writeBlobToFile:(ObjectMapperDelegate *)omDelegate {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString * path = [[[[[paths objectAtIndex:0] stringByAppendingPathComponent:[UserSingleton sharedUser].username]
+    NSString * path = [[[[paths objectAtIndex:0] stringByAppendingPathComponent:[UserSingleton sharedUser].username]
                        stringByAppendingPathComponent:omDelegate.currentRepository]
-                       stringByAppendingPathComponent:omDelegate.currentBlob]
-                       stringByAppendingString:@".blob"];
-    NSError *error;
-    
+                       stringByAppendingPathComponent:omDelegate.currentPath];    
     [[Blob decodeBase64WithString:self.content] writeToFile:path atomically:NO];
-    if (error != NULL) {
-        NSLog(@"Create file error: %@", error);
-    }
+
         
 }
 @end
