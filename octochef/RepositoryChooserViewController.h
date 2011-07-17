@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
-@interface RepositoryChooserViewController : UITableViewController {
+@interface RepositoryChooserViewController : UIViewController {
     
 }
 
+- (IBAction)done:(id)sender;
+
 @property (nonatomic, retain) NSMutableArray *repositoriesArray;
+@property (nonatomic, retain) IBOutlet UIToolbar *topToolbar;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end
