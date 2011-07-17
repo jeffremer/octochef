@@ -13,6 +13,7 @@
 @synthesize username;
 @synthesize currentRepository;
 @synthesize currentBranch;
+@synthesize currentBlob;
 
 -(void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {    
     if ([objects count] > 0) {
@@ -30,14 +31,15 @@
             for (id object in objects) {
                 Tree* tree = object;
                 NSLog(@"leaves: %d", [tree.tree count]);
+                [tree getRecipies:self];
             }
         } else if (firstClass == [Blob class]) {
             for (id object in objects) {
-                //Blob* blob = object;
+                Blob* blob = object;
                 //NSData * data = [NSData base64DataFromString: blob.content];
                 //NSString *someString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
                 
-                //NSLog(@"blob encoding: %@", someString);
+                NSLog(@"blob encoding: %@", blob.encoding);
             }
         }
     }

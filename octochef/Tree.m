@@ -7,17 +7,22 @@
 //
 
 #import "Models.h"
+#import "ObjectMapperDelegate.h"
 
 @implementation Tree
 @synthesize tree;
 
--(void)getRecipiesFromTree{
+-(void) getRecipies:(ObjectMapperDelegate *)omDelegate {
     // TODO: filter out recipies from the tree
     for (id object in self.tree) {
-        
         Leaf * leaf = object;
         // leaf.path <-- filter on this
         NSLog(@"leaf: %@", leaf.sha);
+        ObjectMapperDelegate * newDelegate = [[ObjectMapperDelegate alloc] init];
+        newDelegate.currentRepository = omDelegate.currentRepository;
+        newDelegate.currentBlob = leaf.sha;
+        
+        [Leaf fetchBlobWithDelegate:newDelegate];
         //[leaf fetchBlobWithDelegate:<#(ObjectMapperDelegate *)#> andRepo:<#(NSString *)#> andSha:<#(NSString *)#>
     }
 }
