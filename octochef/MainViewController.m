@@ -97,9 +97,11 @@
         ObjectMapperDelegate *omDelegate = [[ObjectMapperDelegate alloc] init];
         RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[Repository class]];
         [mapping mapAttributes:@"description", @"name", @"created_at", @"html_url", nil];
-        [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/users/smithclay/repos" objectMapping:mapping  delegate:omDelegate];         
+        NSString *resource = [NSString stringWithFormat:@"/users/%@/repos", self.username]; 
+        [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resource objectMapping:mapping  delegate:omDelegate];        
     }
 
+    
 
 }
 
