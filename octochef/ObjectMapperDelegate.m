@@ -38,8 +38,8 @@
                 Blob* blob = object;
                 //NSData * data = [NSData base64DataFromString: blob.content];
                 //NSString *someString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-                
                 NSLog(@"blob encoding: %@", blob.encoding);
+                [blob writeBlobToFile:self];
             }
         }
     }

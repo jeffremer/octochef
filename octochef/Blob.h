@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class ObjectMapperDelegate;
 
 @interface Blob : NSObject {
     NSString * _content;
@@ -14,5 +15,5 @@
 }
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSString * encoding;
-
+-(void)writeBlobToFile:(ObjectMapperDelegate *)omDelegate;
 @end
